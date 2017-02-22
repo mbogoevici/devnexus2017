@@ -21,16 +21,18 @@ public class SensorAverageApplication {
 	@StreamListener
 	@Output(Processor.OUTPUT)
 	public Flux<AverageData> calculateAverage(@Input(Processor.INPUT) Flux<ReceivedSensorData> data) {
-		return data.window(Duration.ofSeconds(20), Duration.ofSeconds(10))
-				.flatMap(window -> window.groupBy(sensorData -> sensorData.getId())
-						.flatMap(group -> calculateAverage(group)));
+		return data.window(Duration.ofSeconds(5), Duration.ofSeconds(1))
+					   .flatMap(window -> window.groupBy(sensorData -> sensorData.getId())
+												  .flatMap(group -> calculateAverage(group)));
 
 	}
 
 	private Mono<AverageData> calculateAverage(GroupedFlux<Integer, ReceivedSensorData> group) {
 		return group
-				.reduce(new Accumulator(0, 0), (a, d) -> new Accumulator(a.getCount() + 1, a.getTotalValue() + d.getTemperature()))
-				.map(accumulator -> new AverageData(group.key(), (accumulator.getTotalValue()) / accumulator.getCount()));
+				.reduce(new Accumulator(0, 0),
+						(a, d) -> new Accumulator(a.getCount() + 1, a.getTotalValue() + d.getTemperature()))
+				.map(accumulator -> new AverageData(group.key(), (accumulator.getTotalValue()) / accumulator.getCount()))
+				;
 	}
 
 	public static void main(String[] args) {

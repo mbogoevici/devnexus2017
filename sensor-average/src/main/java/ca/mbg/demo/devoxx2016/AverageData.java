@@ -29,4 +29,12 @@ public class AverageData {
     public void setAverage(double average) {
         this.average = average;
     }
+
+    @Override
+    public String toString() {
+        return "AverageData{" +
+                       "id=" + id +
+                       ", average=" + average +
+                       '}';
+    }
 }
