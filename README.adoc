@@ -1,0 +1,22 @@
+## What is this?
+
+This is an demo for the talk "Reactive Functional Data Pipelines with Spring Cloud Microservices".
+
+## What is in the package?
+
+It contains
+
+* A Reactive Http Spring Cloud Stream Source with a Reactive Kafka binder;
+* An average calculator using the Reactor 3 Flux API and a regular Kafka binder;
+* A logging application using a regular Kafka binder;
+* A data generator shell script
+
+## Data Format
+
+The Source listens to port 8080 by default.
+
+The data received by the source should be sent as JSON with the following format, using a "Content-Type:application/json" header.
+
+```
+{"id":1,"temperature":23.90}
+```
