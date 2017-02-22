@@ -11,6 +11,10 @@ It contains
 * A logging application using a regular Kafka binder;
 * A data generator shell script
 
+## Prerequisites
+
+The Reactive HTTP source requires to build the https://github.com/mbogoevici/spring-cloud-stream-binder-reactive-streams[Reactive Kafka binder] locally first.
+
 ## Data Format
 
 The Source listens to port 8080 by default.
