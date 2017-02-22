@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>reactive-kafka-http-source</module>
+        <module>sensor-average</module>
     </modules>
 
     <profiles>
