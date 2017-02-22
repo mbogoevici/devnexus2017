@@ -12,6 +12,8 @@
         <module>reactive-kafka-http-source</module>
         <module>sensor-average</module>
         <module>sensor-data-reporter</module>
+        <module>field-transformer-reactive</module>
+        <module>field-transformer-messaging</module>
     </modules>
 
     <profiles>
