@@ -22,7 +22,7 @@ public class SensorAverageApplication {
 	@Output(Processor.OUTPUT)
 	public Flux<AverageData> calculateAverage(@Input(Processor.INPUT) Flux<ReceivedSensorData> data) {
 		return data.window(Duration.ofSeconds(5), Duration.ofSeconds(1))
-					   .flatMap(window -> window.groupBy(sensorData -> sensorData.getId())
+					   .flatMap(window -> window.groupBy(sensorData -> sensorData.getSensorId())
 												  .flatMap(group -> calculateAverage(group)));
 
 	}

@@ -5,21 +5,21 @@ package ca.mbg.demo.devoxx2016;
  */
 public class AverageData {
 
-    private int id;
+    private int sensorId;
 
     private double average;
 
-    public AverageData(int id, double average) {
-        this.id = id;
+    public AverageData(int sensorId, double average) {
+        this.sensorId = sensorId;
         this.average = average;
     }
 
-    public int getId() {
-        return id;
+    public int getSensorId() {
+        return sensorId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSensorId(int sensorId) {
+        this.sensorId = sensorId;
     }
 
     public double getAverage() {
@@ -33,7 +33,7 @@ public class AverageData {
     @Override
     public String toString() {
         return "AverageData{" +
-                       "id=" + id +
+                       "sensorId=" + sensorId +
                        ", average=" + average +
                        '}';
     }

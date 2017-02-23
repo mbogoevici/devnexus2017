@@ -5,7 +5,7 @@ package ca.mbg.demo.devoxx2016;
  */
 public class ReceivedSensorData {
 
-    private int id;
+    private int sensorId;
 
     private double temperature;
 
@@ -13,16 +13,16 @@ public class ReceivedSensorData {
     }
 
     public ReceivedSensorData(int id, int temperature) {
-        this.id = id;
+        this.sensorId = id;
         this.temperature = temperature;
     }
 
-    public int getId() {
-        return id;
+    public int getSensorId() {
+        return sensorId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSensorId(int id) {
+        this.sensorId = id;
     }
 
     public double getTemperature() {
@@ -36,7 +36,7 @@ public class ReceivedSensorData {
     @Override
     public String toString() {
         return "ReceivedSensorData{" +
-                       "id=" + id +
+                       "sensorId=" + sensorId +
                        ", temperature=" + temperature +
                        '}';
     }

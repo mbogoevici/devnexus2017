@@ -22,5 +22,5 @@ The Source listens to port 8080 by default.
 The data received by the source should be sent as JSON with the following format, using a "Content-Type:application/json" header.
 
 ```
-{"id":1,"temperature":23.90}
+{"sensorId":1,"temperature":23.90}
 ```

@@ -5,7 +5,7 @@
 
 	<groupId>org.springframework.cloud.stream.samples.devnexus2017</groupId>
 	<artifactId>sensor-average</artifactId>
-	<version>1.0.0.BUILD-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>sensor-average</name>

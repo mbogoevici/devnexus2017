@@ -5,7 +5,7 @@
 
 	<groupId>org.springframework.cloud.stream.samples.devnexus2017</groupId>
 	<artifactId>reactive-kafka-http-source</artifactId>
-	<version>1.0.0.BUILD-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>reactive-kafka-http-source</name>
