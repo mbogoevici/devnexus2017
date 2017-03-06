@@ -18,8 +18,8 @@ public class FieldTransformerApplication {
 	@Output(Processor.OUTPUT)
 	public Map<String, Object> transformFields(Map<String, Object> doc) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("sensor_id", doc.get("id"));
-		map.put("temp_val", doc.get("temperature"));
+		map.put("sensorId", doc.get("sensor_id"));
+		map.put("temperature", doc.get("temp_val"));
 		return map;
 	}
 
