@@ -18,9 +18,9 @@ import org.springframework.cloud.stream.messaging.Processor;
 @EnableBinding(Processor.class)
 public class SensorAverageApplication {
 
-	@StreamListener
+	@StreamListener(Processor.INPUT)
 	@Output(Processor.OUTPUT)
-	public Flux<AverageData> calculateAverage(@Input(Processor.INPUT) Flux<ReceivedSensorData> data) {
+	public Flux<AverageData> calculateAverage(Flux<ReceivedSensorData> data) {
 		return data.window(Duration.ofSeconds(5), Duration.ofSeconds(1))
 					   .flatMap(window -> window.groupBy(sensorData -> sensorData.getSensorId())
 												  .flatMap(group -> calculateAverage(group)));
